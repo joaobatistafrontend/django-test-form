@@ -5,14 +5,20 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>tsets</title>
-     <link rel="stylesheet"  href="{% static 'css/estilo.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>   
      <h1>Enviar email de com hmtl template</h1>
 
      <form method="post" action="">
           {% csrf_token %}
-          {{form}}
+          <div class="custom-form">
+               <p class="custom-form-field">nome: {{ form.nome }}</p>
+               <p class="custom-form-field">email: {{ form.email }}</p>
+               <p class="custom-form-field">subject: {{ form.opcoes }}</p>
+               <p class="custom-form-field">msg: {{ form.horario }}</p>
+               <p class="custom-form-field">email: {{ form.local }}</p>
+               <p class="custom-form-field">subject: {{ form.data }}</p>
           <button type="submit" class="custom-submit-button">Salvar</button>
       </form>
       
